@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 inline units::units(flecs::world& world) {
     /* Import C module  */

@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 template <typename T>
 flecs::entity ref<T>::entity() const {

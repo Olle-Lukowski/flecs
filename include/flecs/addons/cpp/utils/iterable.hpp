@@ -3,7 +3,7 @@
  * @brief Base class for iterable objects, like queries.
  */
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 template <typename ... Components>
 struct iter_iterable;

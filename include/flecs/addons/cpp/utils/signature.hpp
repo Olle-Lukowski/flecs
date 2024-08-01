@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
 
     template <typename T, if_t< is_const_p<T>::value > = 0>

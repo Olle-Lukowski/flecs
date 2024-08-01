@@ -8,7 +8,7 @@
 #include "../../utils/builder.hpp"
 #include "builder_i.hpp"
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
     template <typename ... Components>
     using query_builder_base = builder<

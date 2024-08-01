@@ -24,7 +24,7 @@
 #endif
 #endif
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /** Int to enum */
 namespace _ {
@@ -56,7 +56,7 @@ struct enum_last {
 
 /* Utility macro to override enum_last trait */
 #define FLECS_ENUM_LAST(T, Last)\
-    namespace flecs {\
+    FLECS_CPP_MODULE namespace flecs {\
     template<>\
     struct enum_last<T> {\
         static constexpr T value = Last;\

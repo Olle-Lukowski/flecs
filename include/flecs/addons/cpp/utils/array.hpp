@@ -6,7 +6,7 @@
  * template code where template expansion would lead to an array with size 0.
  */
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 template <typename T>
 struct array_iterator

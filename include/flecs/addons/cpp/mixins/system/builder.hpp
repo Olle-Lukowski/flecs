@@ -8,7 +8,7 @@
 #include "../../utils/node_builder.hpp"
 #include "builder_i.hpp"
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
     template <typename ... Components>
     using system_builder_base = node_builder<

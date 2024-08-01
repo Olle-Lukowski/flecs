@@ -7,7 +7,7 @@
 
 #include "../query/builder_i.hpp"
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /** Alert builder interface.
  * 

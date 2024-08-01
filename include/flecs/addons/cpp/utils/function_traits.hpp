@@ -5,7 +5,7 @@
  * Code from: https://stackoverflow.com/questions/27024238/c-template-mechanism-to-get-the-number-of-function-arguments-which-would-work
  */
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
 
 template <typename ... Args>

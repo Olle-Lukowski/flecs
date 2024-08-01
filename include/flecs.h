@@ -101,6 +101,14 @@
 #endif
 #endif
 
+/** @def FLECS_CPP_MODULE
+ * Used to enable C++ module support.
+ * Set this to `export` to use flecs as a C++ module.
+ */
+#ifndef FLECS_CPP_MODULE
+#define FLECS_CPP_MODULE
+#endif
+
 /* Tip: if you see weird behavior that you think might be a bug, make sure to
  * test with the FLECS_DEBUG or FLECS_SANITIZE flags enabled. There's a good
  * chance that this gives you more information about the issue! */
