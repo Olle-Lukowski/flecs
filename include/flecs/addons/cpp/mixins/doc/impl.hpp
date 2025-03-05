@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace doc {
 
 /** Get UUID for an entity.

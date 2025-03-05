@@ -7,7 +7,7 @@
 
 #include "builder_i.hpp"
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /** Class that describes a term.
  * 

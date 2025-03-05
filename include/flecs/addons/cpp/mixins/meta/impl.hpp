@@ -8,7 +8,7 @@
 FLECS_ENUM_LAST(flecs::meta::type_kind_t, flecs::meta::TypeKindLast)
 FLECS_ENUM_LAST(flecs::meta::primitive_kind_t, flecs::meta::PrimitiveKindLast)
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace meta {
 namespace _ {
 

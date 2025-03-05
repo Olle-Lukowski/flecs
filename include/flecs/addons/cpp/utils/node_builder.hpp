@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
 
 // Macros for template types so we don't go cross-eyed

@@ -7,7 +7,7 @@
 
 #include <utility> // std::declval
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 namespace _ 

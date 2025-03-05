@@ -17265,7 +17265,7 @@ const ecs_member_t* ecs_cpp_last_member(
  * @{
  */
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 struct world;
@@ -17303,7 +17303,7 @@ struct each_delegate;
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_globals API Types & Globals
@@ -17508,7 +17508,7 @@ static const flecs::entity_t ScopeClose = EcsScopeClose;
 #define FLECS_FWD(...) \
   static_cast<decltype(__VA_ARGS__)&&>(__VA_ARGS__)
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 namespace _
@@ -17537,7 +17537,7 @@ template<class Ty> inline void free_obj(void* _ptr) {
 inline void* operator new(size_t,   flecs::_::placement_new_tag_t, void* _ptr) noexcept { return _ptr; }
 inline void  operator delete(void*, flecs::_::placement_new_tag_t, void*)      noexcept {              }
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 // C++11/C++14 convenience template replacements
@@ -17627,7 +17627,7 @@ struct always_false {
  * template code where template expansion would lead to an array with size 0.
  */
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 template <typename T>
 struct array_iterator
@@ -17737,7 +17737,7 @@ struct array<T, Size, enable_if_t<Size == 0>> final {
  * @brief String utility that doesn't implicitly allocate memory.
  */
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 struct string_view;
 
@@ -17927,7 +17927,7 @@ struct string_view : string {
 #define flecs_enum_cast(T, v) static_cast<T>(v)
 #endif
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /** Int to enum */
 namespace _ {
@@ -17954,7 +17954,7 @@ struct enum_last {
 
 /* Utility macro to override enum_last trait */
 #define FLECS_ENUM_LAST(T, Last)\
-    namespace flecs {\
+    FLECS_CPP_MODULE namespace flecs {\
     template<>\
     struct enum_last<T> {\
         static constexpr T value = Last;\
@@ -18399,7 +18399,7 @@ enum_data<E> enum_type(flecs::world_t *world) {
  * @brief Wrapper around ecs_strbuf_t that provides a simple stringstream like API.
  */
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 struct stringstream {
     explicit stringstream() 
@@ -18448,7 +18448,7 @@ private:
  * Code from: https://stackoverflow.com/questions/27024238/c-template-mechanism-to-get-the-number-of-function-arguments-which-would-work
  */
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
 
 template <typename ... Args>
@@ -18601,7 +18601,7 @@ using second_arg_t = typename second_arg<Func>::type;
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 struct id;
 struct entity;
@@ -18754,7 +18754,7 @@ protected:
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @ingroup cpp_core_queries
@@ -18776,7 +18776,7 @@ struct term_builder;
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_core_queries Queries
@@ -18813,7 +18813,7 @@ struct query_builder;
 
 #define ECS_EVENT_DESC_ID_COUNT_MAX (8)
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @ingroup cpp_addons_event
@@ -18969,7 +18969,7 @@ public:
 }
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
 
 // Utility to derive event type from function
@@ -19001,7 +19001,7 @@ using event_from_func_t = typename event_from_func<Func>::type;
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_observers Observers
@@ -19028,7 +19028,7 @@ struct observer_builder;
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_systems Systems
@@ -19063,7 +19063,7 @@ void system_init(flecs::world& world);
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_pipelines Pipelines
@@ -19105,7 +19105,7 @@ static const flecs::entity_t PostFrame = EcsPostFrame;
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_timer Timer
@@ -19138,7 +19138,7 @@ void timer_init(flecs::world& world);
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace doc {
 
 /**
@@ -19187,7 +19187,7 @@ void init(flecs::world& world);
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_rest Rest
@@ -19221,7 +19221,7 @@ void init(flecs::world& world);
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_meta Meta
@@ -19341,7 +19341,7 @@ void init(flecs::world& world);
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_meta Meta
@@ -19506,7 +19506,7 @@ struct cursor {
 
 #include <stdio.h>
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_meta Meta
@@ -19690,7 +19690,7 @@ struct opaque {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 struct units {
 
 /**
@@ -20055,7 +20055,7 @@ units(flecs::world& world);
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_stats Stats
@@ -20100,7 +20100,7 @@ struct stats {
 
 #define ECS_EVENT_DESC_ID_COUNT_MAX (8)
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @ingroup cpp_addons_metrics
@@ -20197,7 +20197,7 @@ protected:
 }
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_metrics Metrics
@@ -20235,7 +20235,7 @@ struct metrics {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_alerts Alerts
@@ -20277,7 +20277,7 @@ struct alert_builder;
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_json Json
@@ -20311,7 +20311,7 @@ using iter_to_json_desc_t = ecs_iter_to_json_desc_t;
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_app App
@@ -20415,7 +20415,7 @@ private:
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @ingroup cpp_addons_script
@@ -20457,7 +20457,7 @@ protected:
 }
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_script Script
@@ -20481,7 +20481,7 @@ struct script_builder;
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace log {
 
 /**
@@ -20579,7 +20579,7 @@ inline void pop() {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 namespace _ {
     struct pair_base { };
@@ -20723,7 +20723,7 @@ struct is_actual {
 
 #pragma once
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 namespace _ 
@@ -21076,7 +21076,7 @@ ecs_move_t move_dtor(ecs_flags32_t &) {
 
 #pragma once
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 /* Static helper functions to assign a component value */
@@ -23012,7 +23012,7 @@ struct scoped_world : world {
  * @{
  */
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 /** Unsafe wrapper class around a field.
@@ -23125,7 +23125,7 @@ protected:
  * @{
  */
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -23168,7 +23168,7 @@ private:
 
 } // namespace flecs
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -23638,7 +23638,7 @@ private:
  * @{
  */
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 /** Entity view.
@@ -24749,7 +24749,7 @@ private:
 
 #pragma once
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 /** Entity builder. 
@@ -26074,7 +26074,7 @@ protected:
  * @{
  */
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 /** Entity.
@@ -26469,7 +26469,7 @@ const char* from_json(const char *json) {
 
 #include <utility> // std::declval
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 namespace _ 
@@ -27375,7 +27375,7 @@ using delegate = _::each_delegate<typename std::decay<Func>::type, Args...>;
  * @{
  */
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 namespace _ {
 
@@ -28229,7 +28229,7 @@ private:
 
 #pragma once
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 /**
@@ -28324,7 +28324,7 @@ private:
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_types Types
@@ -28412,7 +28412,7 @@ private:
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_tables Tables
@@ -28763,7 +28763,7 @@ private:
  * @brief Base class for iterable objects, like queries.
  */
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 template <typename ... Components>
 struct iter_iterable;
@@ -29134,7 +29134,7 @@ worker_iterable<Components...> iterable<Components...>::worker(
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 inline flecs::entity id::entity() const {
     ecs_assert(!is_pair(), ECS_INVALID_OPERATION, NULL);
@@ -29244,7 +29244,7 @@ inline flecs::id world::pair(entity_t r, entity_t o) const {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 template <typename T>
 flecs::entity ref<T>::entity() const {
@@ -29485,7 +29485,7 @@ inline flecs::entity world::prefab(const char *name) const {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 template <typename T, typename... Args>
 inline flecs::component<T> world::component(Args &&... args) const {
@@ -29522,7 +29522,7 @@ inline flecs::untyped_component world::component(Args &&... args) const {
 
 #include <stdio.h>
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
 
     template <typename T, if_t< is_const_p<T>::value > = 0>
@@ -29597,7 +29597,7 @@ namespace _ {
 } // namespace flecs
 
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 /** Term identifier builder.
@@ -30030,7 +30030,7 @@ private:
 }
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /** Class that describes a term.
  * 
@@ -30182,7 +30182,7 @@ inline flecs::term world::term() const {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
 
 // Macros for template types so we don't go cross-eyed
@@ -30238,7 +30238,7 @@ protected:
 #pragma once
 
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 /** Query builder interface.
@@ -30587,7 +30587,7 @@ private:
 }
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
     template <typename ... Components>
     using query_builder_base = builder<
@@ -30630,7 +30630,7 @@ struct query_builder final : _::query_builder_base<Components...> {
 }
 
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 struct query_base {
@@ -30982,7 +30982,7 @@ inline query_base::operator flecs::query<> () const {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
 
 // Macros for template types so we don't go cross-eyed
@@ -31060,7 +31060,7 @@ protected:
 #pragma once
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /** Observer builder interface.
  * 
@@ -31135,7 +31135,7 @@ private:
 }
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
     template <typename ... Components>
     using observer_builder_base = node_builder<
@@ -31159,7 +31159,7 @@ struct observer_builder final : _::observer_builder_base<Components...> {
 }
 
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 struct observer final : entity
@@ -31209,7 +31209,7 @@ inline observer_builder<Comps...> world::observer(Args &&... args) const {
 #pragma once
 
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 // Mixin implementation
@@ -31312,7 +31312,7 @@ inline void entity_view::enqueue(flecs::entity evt) const {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 template <typename E>
 inline E entity_view::to_constant() const {
@@ -31344,7 +31344,7 @@ inline flecs::entity world::to_entity(E constant) const {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 namespace _ {
 
@@ -31481,7 +31481,7 @@ inline flecs::entity world::import() {
 #pragma once
 
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 /** System builder interface.
@@ -31636,7 +31636,7 @@ private:
 }
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
     template <typename ... Components>
     using system_builder_base = node_builder<
@@ -31665,7 +31665,7 @@ struct system_builder final : _::system_builder_base<Components...> {
 }
 
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 struct system_runner_fluent {
@@ -31870,7 +31870,7 @@ inline void system_init(flecs::world& world) {
 #pragma once
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /** Pipeline builder interface.
  * 
@@ -31889,7 +31889,7 @@ private:
 }
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
     template <typename ... Components>
     using pipeline_builder_base = builder<
@@ -31914,7 +31914,7 @@ struct pipeline_builder final : _::pipeline_builder_base<Components...> {
 }
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 template <typename ... Components>
 struct pipeline : entity {
@@ -32003,7 +32003,7 @@ inline bool world::using_task_threads() const {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 // Timer class
 struct timer final : entity {
@@ -32111,7 +32111,7 @@ inline void timer_init(flecs::world& world) {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace doc {
 
 /** Get UUID for an entity.
@@ -32281,7 +32281,7 @@ inline void init(flecs::world& world) {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace rest {
 namespace _ {
 
@@ -32305,7 +32305,7 @@ inline void init(flecs::world& world) {
 FLECS_ENUM_LAST(flecs::meta::type_kind_t, flecs::meta::TypeKindLast)
 FLECS_ENUM_LAST(flecs::meta::primitive_kind_t, flecs::meta::PrimitiveKindLast)
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace meta {
 namespace _ {
 
@@ -32464,7 +32464,7 @@ inline int ecs_serializer_t::member(const char *name) const {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 inline units::units(flecs::world& world) {
     /* Import C module  */
@@ -32687,7 +32687,7 @@ inline units::units(flecs::world& world) {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 inline stats::stats(flecs::world& world) {
 #ifdef FLECS_UNITS
@@ -32713,7 +32713,7 @@ inline stats::stats(flecs::world& world) {
 
 #pragma once
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 inline metrics::metrics(flecs::world& world) {
     world.import<flecs::units>();
@@ -32856,7 +32856,7 @@ inline untyped_component& untyped_component::metric(
 #pragma once
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /** Alert builder interface.
  * 
@@ -33011,7 +33011,7 @@ private:
 }
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 namespace _ {
     template <typename ... Components>
     using alert_builder_base = builder<
@@ -33042,7 +33042,7 @@ struct alert_builder final : _::alert_builder_base<Components...> {
 }
 
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 template <typename ... Components>
 struct alert final : entity
@@ -33092,7 +33092,7 @@ inline flecs::alert_builder<Comps...> world::alert(Args &&... args) const {
 #pragma once
 
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 inline flecs::entity script_builder::run() const {
@@ -33111,7 +33111,7 @@ inline flecs::entity script_builder::run() const {
 
 #pragma once
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 template <typename T>
@@ -33172,7 +33172,7 @@ T* field<T>::operator->() const {
 
 #pragma once
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 inline flecs::entity iter::system() const {
@@ -33296,7 +33296,7 @@ void iter::targets(int8_t index, const Func& func) {
 
 #pragma once
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 inline void world::init_builtin_components() {
@@ -33659,4 +33659,3 @@ inline flecs::scoped_world world::scope(const char* name) const {
 
 
 #endif
-

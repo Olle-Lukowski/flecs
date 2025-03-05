@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 /* Static helper functions to assign a component value */

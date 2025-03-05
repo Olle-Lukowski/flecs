@@ -14,7 +14,7 @@
  * @{
  */
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 /** Unsafe wrapper class around a field.

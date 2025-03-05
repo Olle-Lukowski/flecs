@@ -59,6 +59,10 @@
 #define ecs_ftime_t ecs_float_t
 #endif
 
+#ifndef FLECS_CPP_MODULE
+#define FLECS_CPP_MODULE
+#endif
+
 /** @def FLECS_LEGACY
  * Define when building for C89
  */

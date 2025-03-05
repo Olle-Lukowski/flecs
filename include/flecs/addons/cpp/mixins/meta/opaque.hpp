@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 /**
  * @defgroup cpp_addons_meta Meta

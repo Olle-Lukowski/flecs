@@ -7,7 +7,7 @@
 
 #include "builder.hpp"
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 // Mixin implementation

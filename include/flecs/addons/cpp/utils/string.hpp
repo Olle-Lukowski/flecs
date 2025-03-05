@@ -3,7 +3,7 @@
  * @brief String utility that doesn't implicitly allocate memory.
  */
 
-namespace flecs {
+FLECS_CPP_MODULE namespace flecs {
 
 struct string_view;
 

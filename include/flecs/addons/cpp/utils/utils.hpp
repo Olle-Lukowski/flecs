@@ -36,7 +36,7 @@
 #define FLECS_FWD(...) \
   static_cast<decltype(__VA_ARGS__)&&>(__VA_ARGS__)
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 namespace _
@@ -65,7 +65,7 @@ template<class Ty> inline void free_obj(void* _ptr) {
 inline void* operator new(size_t,   flecs::_::placement_new_tag_t, void* _ptr) noexcept { return _ptr; }
 inline void  operator delete(void*, flecs::_::placement_new_tag_t, void*)      noexcept {              }
 
-namespace flecs
+FLECS_CPP_MODULE namespace flecs
 {
 
 // C++11/C++14 convenience template replacements

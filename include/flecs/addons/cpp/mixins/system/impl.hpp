@@ -7,7 +7,7 @@
 
 #include "builder.hpp"
 
-namespace flecs 
+FLECS_CPP_MODULE namespace flecs 
 {
 
 struct system_runner_fluent {
